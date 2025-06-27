@@ -1,0 +1,58 @@
+### Create Task: Write Docs
+POST http://localhost:8000/tasks
+Content-Type: application/json
+
+{
+  "title": "Write API documentation",
+  "description": "Finish writing README.md and setup instructions",
+  "priority": "high",
+  "status": "pending"
+}
+
+### Create Task: Deploy Backend
+POST http://localhost:8000/tasks
+Content-Type: application/json
+
+{
+  "title": "Deploy backend to server",
+  "priority": "medium",
+  "status": "in_progress",
+  "due_date": "2025-07-01T17:00:00Z"
+}
+
+### Create Task: Database Migration
+POST http://localhost:8000/tasks
+Content-Type: application/json
+
+{
+  "title": "Run DB migration",
+  "description": "Add priority column to Task table",
+  "priority": "low",
+  "status": "completed"
+}
+
+### Get All Tasks
+GET http://localhost:8000/tasks
+
+### Search by keyword
+GET http://localhost:8000/tasks?q=backend
+
+### Filter by status
+GET http://localhost:8000/tasks?status=pending
+
+### Sort by due date descending
+GET http://localhost:8000/tasks?sort_by=due_date&sort_order=desc
+
+### Get single task
+GET http://localhost:8000/tasks/1
+
+### Update a task
+PUT http://localhost:8000/tasks/1
+Content-Type: application/json
+
+{
+  "status": "completed"
+}
+
+### Delete a task
+DELETE http://localhost:8000/tasks/1
